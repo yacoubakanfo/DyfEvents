@@ -1,15 +1,23 @@
-<?php   
-    //on charge tous les fichiers à l'extension Class.php
-    class Autoloader
+<?php
+
+class Autoloader{
+
+    static function register()
     {
-        public static function autoload($class)
-        {
+        spl_autoload_register(array(__CLASS__, 'autoload'));
+    }
+
+    static function autoload($class)
+    {
+
+        if(file_exists('controller/'.$class.'.Class.php')){
+            require 'controller/'.$class.'.Class.php';
+        }
+    
+        if(file_exists('model/'.$class.'.Class.php')){
             require $class.'.Class.php';
         }
-        public static function register()
-        {
-            spl_autoload_register(array(__CLASS__, 'autoload')); 
-        }
-    }
-       
+    } 
+}   
+
 ?>

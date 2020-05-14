@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="assets/img/masque.jpg">
-  <title>Accueil-Dashboard</title>
+
+  <title>Enregistrer un evenement</title>
+
   <!-- Bootstrap CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- bootstrap theme -->
@@ -18,6 +24,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/style-responsive.css" rel="stylesheet" />  
 </head>
+
 <body>
   <!-- container section start -->
   <section id="container" class="">
@@ -26,6 +33,7 @@
       <div class="toggle-nav">
         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
       </div>
+
       <!--logo start-->
       <a href="index.php" class="logo">Mon <span class="lite">Dashboard</span></a>
       <!--logo end-->
@@ -52,7 +60,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="assets/img/avatar.png">
                             </span>
-                            <span class="username"></span>
+                            <span class="username"><?php echo $_SESSION['nom'];?></span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
@@ -70,6 +78,9 @@
         <!-- notificatoin dropdown end-->
       </div>
     </header>
+    <!--header end-->
+
+    <!--sidebar start-->
     <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
@@ -101,77 +112,102 @@
               <li><a class="" href="index.php?action=lister">liste des evenements</a></li>
             </ul>
           </li>
+
         </ul>
+        <!-- sidebar menu end-->
       </div>
     </aside>
+    <!--sidebar end-->
+
+    <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+            <h3 class="page-header"><i class="fa fa-files-o"></i> Enregistrer un evenement</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="fa fa-laptop"></i>Dashboard</li>
+              <li><i class="fa fa-home"></i><a href="../controller/accueil.Class.php">Accueil</a></li>
+              <li><i class="icon_document_alt"></i>Formulaire</li>
+              <li><i class="fa fa-files-o"></i>Enregistrer un evenement</li>
             </ol>
           </div>
         </div>
+        <!-- Form validations -->
         <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box blue-bg">
-              <i class="fa fa-cloud-download"></i>
-              <div class="count">6.674</div>
-              <div class="title">Download</div>
-            </div>
+          <div class="col-lg-12">
+            <section class="panel">
+              <header class="panel-heading">
+                Enregistrer un evenement
+              </header>
+              <div class="panel-body">
+                <div class="form">
+                  <form class="form-validate form-horizontal" id="feedback_form" method="POST" action="index.php?action=enregistrer">
+                    <div class="form-group ">
+                      <label for="cname" class="control-label col-lg-2">Nom <span class="required">*</span></label>
+                      <div class="col-lg-10">
+                        <input class="form-control" id="cname" name="name" minlength="5" type="text" required />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="cname" class="control-label col-lg-2">Description <span class="required">*</span></label>
+                      <div class="col-lg-10">
+                        <input class="form-control" id="cname" name="description" minlength="5" type="text" required />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="cemail" class="control-label col-lg-2">Date de début <span class="required">*</span></label>
+                      <div class="col-lg-10">
+                        <input class="form-control " id="cemail" type="date" name="dateBegin" required />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="curl" class="control-label col-lg-2">Date de fin</label>
+                      <div class="col-lg-10">
+                        <input class="form-control " id="curl" type="date" name="dateEnd" />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="cname" class="control-label col-lg-2">Organisateur <span class="required">*</span></label>
+                      <div class="col-lg-10">
+                        <input class="form-control" id="subject" name="planner" minlength="5" type="text" required />
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-primary" type="submit" name="submit">Enregistrer</button>
+                        <button class="btn btn-default" type="reset">Annuler</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </section>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box brown-bg">
-              <i class="fa fa-shopping-cart"></i>
-              <div class="count">7.538</div>
-              <div class="title">Purchased</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-  <!-- container section start -->
+        </div>
+        <!-- page end-->
+      </section>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section end -->
+
   <!-- javascripts -->
   <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/jquery-ui-1.10.4.min.js"></script>
-  <script src="assets/js/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
-  <!-- bootstrap -->
   <script src="assets/js/bootstrap.min.js"></script>
   <!-- nice scroll -->
   <script src="assets/js/jquery.scrollTo.min.js"></script>
   <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-  <!-- charts scripts -->
-  <script src="../assets/jquery-knob/js/jquery.knob.js"></script>
-  <script src="assets/js/jquery.sparkline.js" type="text/javascript"></script>
-  <script src="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-  <script src="assets/js/owl.carousel.js"></script>
-  <!-- jQuery full calendar -->
-  <script src="assets/js/fullcalendar.min.js"></script>
-    <!-- Full Google Calendar - Calendar -->
-    <script src="../assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
-    <!--script for this page only-->
-    <script src="assets/js/calendar-custom.js"></script>
-    <script src="assets/js/jquery.rateit.min.js"></script>
-    <!-- custom select -->
-    <script src="assets/js/jquery.customSelect.min.js"></script>
-    <script src="../assets/chart-master/Chart.js"></script>
-    <!--custome script for all page-->
-    <script src="assets/js/scripts.js"></script>
-    <!-- custom script for this page-->
-    <script src="assets/js/sparkline-chart.js"></script>
-    <script src="assets/js/easy-pie-chart.js"></script>
-    <script src="assets/js/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="assets/js/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="assets/js/xcharts.min.js"></script>
-    <script src="assets/js/jquery.autosize.min.js"></script>
-    <script src="assets/js/jquery.placeholder.min.js"></script>
-    <script src="assets/js/gdp-data.js"></script>
-    <script src="assets/js/morris.min.js"></script>
-    <script src="assets/js/sparklines.js"></script>
-    <script src="assets/js/charts.js"></script>
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
+  <!-- jquery validate js -->
+  <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+
+  <!-- custom form validation script for this page-->
+  <script src="assets/js/form-validation-script.js"></script>
+  <!--custome script for all page-->
+  <script src="assets/js/scripts.js"></script>
+
+
 </body>
+
 </html>
