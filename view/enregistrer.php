@@ -11,16 +11,16 @@
   <title>Formulaire d'enregistremment</title>
 
   <!-- Bootstrap CSS -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style/css/bootstrap.min.css" rel="stylesheet">
   <!-- bootstrap theme -->
-  <link href="../assets/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="../style/css/bootstrap-theme.css" rel="stylesheet">
   <!--external css-->
   <!-- font icon -->
-  <link href="../assets/css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="../asset/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../style/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="../style/css/font-awesome.min.css" rel="stylesheet" />
   <!-- Custom styles -->
-  <link href="../assets/css/style.css" rel="stylesheet">
-  <link href="../assets/css/style-responsive.css" rel="stylesheet" />
+  <link href="../style/css/style.css" rel="stylesheet">
+  <link href="../style/css/style-responsive.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -157,19 +157,22 @@
         </div>
       </div>
 <!-- javascripts -->
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="..style/js/jquery.js"></script>
+<script src="../style/js/bootstrap.min.js"></script>
 <!-- nice scroll -->
-<script src="../assets/js/jquery.scrollTo.min.js"></script>
-<script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="../syle/js/jquery.scrollTo.min.js"></script>
+<script src="../style/js/jquery.nicescroll.js" type="text/javascript"></script>
 <!-- jquery validate js -->
 <script type="text/javascript" src="../style/js/jquery.validate.min.js"></script>
 
 <!-- custom form validation script for this page-->
-<script src="../assets/js/form-validation-script.js"></script>
+<script src="../style/js/form-validation-script.js"></script>
 <!--custome script for all page-->
-<script src="../assets/js/scripts.js"></script>
+<script src="../style/js/scripts.js"></script>
+
+
 </body>
+
 </html>
 
                   

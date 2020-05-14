@@ -1,5 +1,5 @@
 <?php
-require_once '../modeles/connection.class.php';
+require_once '../model/connection.class.php';
 class Eventmanager extends Connection
 {
 
