@@ -9,7 +9,14 @@ class Autoloader{
 
     static function autoload($class)
     {
-        require $class.'.Class.php';
+
+        if(file_exists('controller/'.$class.'.Class.php')){
+            require 'controller/'.$class.'.Class.php';
+        }
+    
+        if(file_exists('model/'.$class.'.Class.php')){
+            require $class.'.Class.php';
+        }
     } 
 }   
 

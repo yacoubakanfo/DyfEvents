@@ -1,10 +1,3 @@
-/**
-* Template Name: Imperial - v2.0.0
-* Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -1105,9 +1098,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   float: left;
 }
-/* #footer .copyright {
-  text-align: center;
-} */
 
 
 #footer .credits {
@@ -1119,9 +1109,4 @@ body.mobile-nav-active #mobile-nav-toggle {
 .credits a{
   color: fuchsia;
 }
-/* #footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: #ccc;
-} */
+

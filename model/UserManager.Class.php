@@ -1,5 +1,5 @@
 <?php
-
+require_once 'model/Connection.Class.php';
 class UserManager extends Connection
 {
 
@@ -12,37 +12,18 @@ class UserManager extends Connection
         'password' => md5($_POST['password'])));
     }
 
-    public function auth(User $user)
-    {
-
-            // on recupère le password de la table qui correspond au login du visiteur
-
-            $req = $this->db->prepare('SELECT * FROM user WHERE username=:username AND password=:password');
-            $req->execute(array(
-                'username' => $_POST['username'],
-                'password' => md5($_POST['password'])));
-                $row=$req->fetchAll();
-                if(count($row)!=0){
-                    return $row;
-                }
-                else{ 
-                    return false;
-                }
-            // while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
-                // if ($row['password'] != $_POST['password']) {
-                //     echo 'Mauvais login / password. Merci de recommencer';
-                // } else {
-                //     session_start();
- 
-                //     header('Location: ../controller/Inscription.php');
-                // }
-                // index.php?action=accueil
-        //     }
-        // }
-        //     else {
-        //         echo 'Veuillez remplir tous les champs!';
-        //     }
+    public function verifUsername(User $username){
+        $req = $this->db->prepare("SELECT idUser from user where username=:username limit 1");
+        $req->execute(array(
+        'username' => $_POST['username']));
+        $tab = $req->fetchAll();
+        if(count($tab)>0){
+           return true;
         }
+        else{
+            return false;
+        }
+    }
 
 }
 

@@ -24,21 +24,21 @@
   <meta name="twitter:image" content="">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/masque.jpg" rel="apple-touch-icon">
+  <link href="assets/img/masque.jpg" rel="icon">
+  <link href="assets/img/masque.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../assets/css/stylefront.css" rel="stylesheet">
+  <link href="assets/css/stylefront.css" rel="stylesheet">
 
 </head>
 
@@ -55,7 +55,7 @@
         <h1>Bienvenue sur la plateforme evenementielle DyfEvents</h1>
         <h2>La plateforme qui <span class="rotating"> inspire, révele, connecte les acteurs de l'evenementiel! </span></h2>
         <div class="actions">
-          <a href="#about" class="btn-get-started">Evenements en cours</a>
+          <a href="#portfolio" class="btn-get-started">Evenements en cours</a>
           <!-- <a href="#services" class="btn-services">Our Services</a> -->
         </div>
       </div>
@@ -67,14 +67,14 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><h3>DyfEvents</h3></a>
+        <a href="index.php"><h3>DyfEvents</h3></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="index.html">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.html">Accueil</a></li>
+          <li class="menu-active"><a href="index.php">Accueil</a></li>
           <li><a href="#about">Qui sommes-nous</a></li>
           <li><a href="#portfolio">Evenements</a></li>
           <li><a href="#testimonials">Leurs avis</a></li>
@@ -101,7 +101,7 @@
         <div class="row">
 
           <div class="col-lg-6 about-img">
-            <img src="../assets/img/fete2.jpg" alt="">
+            <img src="assets/img/fete2.jpg" alt="">
           </div>
 
           <div class="col-md-6 about-content">
@@ -129,7 +129,7 @@
             <p class="subscribe-text">Parcourez et commentez une vaste gamme d'evenements au programme!</p>
           </div>
           <div class="col-md-4 subscribe-btn-container">
-            <a class="subscribe-btn" href="#">Commentez</a>
+            <a class="subscribe-btn" href="index.php?action=detail">Commentez</a>
           </div>
         </div>
       </div>
@@ -158,97 +158,23 @@
         </div>
 
         <div class="row portfolio-container">
-
+          <?php                
+            foreach($manager as $key => $value) 
+            {
+          ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="../assets/img/anniv2.jpg" class="img-fluid" alt="">
+            <img src="assets/img/anniv2.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Anniversaire</h4>
-              <p>Anniversaire</p>
-              <a href="../assets/img/anniv.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
+              <h4><?=$value->getName()?></h4>
+              <p><?=$value->getDescription()?></p>
+              <a href="assets/img/anniv2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="fa fa-plus"></i></a>
+              <a href="index.php?action=detail" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="../assets/img/ballerine.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Spectacle</h4>
-              <p>Ballerine</p>
-              <a href="../assets/img/ballerine.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="../assets/img/carnaval1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Carnaval</h4>
-              <p>Carnaval de masque</p>
-              <a href="../assets/img/carnaval1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="../assets/img/croisiere.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Croisiere</h4>
-              <p>Croisiere MSC</p>
-              <a href="../assets/img/croisiere.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="../assets/img/concert.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Concert</h4>
-              <p>Concert-live du musicien bil aka kora</p>
-              <a href="../assets/img/concert.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="../assets/img/masque.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Bal costumé</h4>
-              <p>Bal masqué au Mask</p>
-              <a href="../assets/img/masque.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="../assets/img/marathon.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Marathon</h4>
-              <p>Marathon des echangeurs</p>
-              <a href="../assets/img/marathon.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="../assets/img/mariage.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Mariage</h4>
-              <p>Mariage du fils du President</p>
-              <a href="../assets/img/mariage.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="../assets/img/conference.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Conference</h4>
-              <p>Conference internationale sur le climat</p>
-              <a href="../assets/img/conference.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="fa fa-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="fa fa-link fa-flip-horizontal"></i></a>
-            </div>
-          </div>
-
+          <?php
+            }
+          ?> 
+          
         </div>
 
       </div>
@@ -268,14 +194,14 @@
         <div class="row">
           <div class="col-md-3">
             <div class="profile">
-              <div class="pic"><img src="../assets/img/client-1.jpg" alt=""></div>
+              <div class="pic"><img src="assets/img/client-1.jpg" alt=""></div>
               <h4>Saul Goodman</h4>
               <span>Lawless Inc</span>
             </div>
           </div>
           <div class="col-md-9">
             <div class="quote">
-              <b><img src="../assets/img/quote_sign_left.png" alt=""></b> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small><img src="../assets/img/quote_sign_right.png" alt=""></small>
+              <b><img src="assets/img/quote_sign_left.png" alt=""></b> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
             </div>
           </div>
         </div>
@@ -283,12 +209,12 @@
         <div class="row">
           <div class="col-md-9">
             <div class="quote">
-              <b><img src="../assets/img/quote_sign_left.png" alt=""></b> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="../assets/img/quote_sign_right.png" alt=""></small>
+              <b><img src="assets/img/quote_sign_left.png" alt=""></b> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
             </div>
           </div>
           <div class="col-md-3">
             <div class="profile">
-              <div class="pic"><img src="../assets/img/diane.jpg" alt=""></div>
+              <div class="pic"><img src="assets/img/diane.jpg" alt=""></div>
               <h4>Sara Wilsson</h4>
               <span>Odeo Inc</span>
             </div>
@@ -320,21 +246,21 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/wow/wow.min.js"></script>
-  <script src="../assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-  <script src="../assets/vendor/superfish/superfish.min.js"></script>
-  <script src="../assets/vendor/hoverIntent/hoverIntent.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../assets/vendor/morphext/morphext.min.js"></script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/wow/wow.min.js"></script>
+  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/vendor/superfish/superfish.min.js"></script>
+  <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/morphext/morphext.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
