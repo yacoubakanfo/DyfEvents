@@ -1,4 +1,14 @@
 <?php
+// require_once 'Inscription.Class.php';
+// require_once 'ListEvent.Class.php';
+// require_once 'Admin.Class.php';
+// require_once 'Login.Class.php';
+// require_once 'Register.Class.php';
+// require_once 'Logout.Class.php';
+// require_once 'Delete.Class.php';
+// require_once 'Erreur.Class.php';
+// require_once 'Home.Class.php';
+// require_once 'DetailComments.Class.php';
 require_once 'model/Autoloader.Class.php';
  
 class Main {
@@ -43,7 +53,10 @@ class Main {
                     case 'inscription' :
                     $this->ctrlInscription->signIn();
                     break;
-
+                    // case 'billet' :
+                    //     $id = $_GET['id'];
+                    //     $this->ctrlBillet->billetunique();
+                    //     break;
                     case 'login' :
                         $this->ctrlLogin->login();
                         break;
@@ -81,7 +94,22 @@ class Main {
                     default:
                     $this->ctrlErreur->error();
                     break;
-
+                    // case 'editeur' :
+                    //     $this->ctrlEditeur->editeur();
+                    //     break;
+                    // case 'administration':
+                    //     $this->ctrlAdministration->administration();
+                    //     break;
+                    // case 'addComment':
+                    //     $params = $_POST['params'];
+                    //     $controlleur = $this->ctrlBillet;
+                    //     $controlleur->addComment($params);
+                    //     break;
+                    // case 'connectAdmin' :
+                    //     $pseudo = $_POST['pseudo'];
+                    //     $password = $_POST['password'];
+                    //     $controlleur = $this->ctrlAdministration;
+                    //     $controlleur->connectAdmin($pseudo, $password);
  
  
                 }
