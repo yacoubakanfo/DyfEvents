@@ -2,6 +2,18 @@
 
 class EventManager extends Connection
 {
+    public function add(Event $event)
+    {
+
+        $req = $this->db->prepare('INSERT INTO event SET name =:name, description =:description, dateBegin =:dateBegin, dateEnd =:dateEnd, planner =:planner');
+        $req->bindValue(':name', $event->getName());
+        $req->bindValue(':description', $event->getDescription());
+        $req->bindValue(':dateBegin', $event->getDateBegin());
+        $req->bindValue(':dateEnd', $event->getDateEnd());
+        $req->bindValue(':planner', $event->getPlanner()); 
+
+        $req->execute();
+    }
 
     public function getList()
     {
