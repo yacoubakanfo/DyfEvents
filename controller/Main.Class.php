@@ -35,65 +35,41 @@ class Main {
             if(isset($_GET['action'])) {
                 // $action = $_GET['action'];
                 switch ($_GET['action']) {
-
                     case 'admin' :
                     $this->ctrlAdmin->index();
                     break;
-
                     case 'inscription' :
                     $this->ctrlInscription->signIn();
                     break;
-
                     case 'login' :
                         $this->ctrlLogin->login();
                         break;
-
                     case 'enregistrer' :
                         $this->ctrlRegister->register();
                         break;
-
                     case 'lister' :
                         $this->ctrlList->list();
-                        break;
-    
+                        break;    
                     case 'modifier' :
                         $this->ctrlUpdate->update();
                         break;
-
                     case 'supprimer' :
                         $this->ctrlDelete->delete();
                         break;
-
                     case 'deconnecter' :
                         $this->ctrlLogout->logout();
                         break;
-
                     case 'detail' :
                         $this->ctrlDetailComments->detailComments();
                         break;
-
-                    // case 'commenter' :
-                    //     $this->ctrlComment->comment();
-                    //     break;
-
-
-
                     default:
                     $this->ctrlErreur->error();
                     break;
-
- 
- 
                 }
             }
             else {
                 $this->ctrlHome->index();  // action par défaut
             }
-
-        // catch(Exception $e) {
-        //     $errorMessage = $e->getMessage();
-        //     require('view/errorView.php');
-
         }
         catch (Exception $e) {
             $this->ctrlErreur->error();
